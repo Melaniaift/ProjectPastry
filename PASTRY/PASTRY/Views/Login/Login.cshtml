@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "PASTRY";
+
+    Layout = null;
+}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PASTRY</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        label span {
+            color: white;
+        }
+
+        body {
+            background-color: #ffb3b3;
+        }
+
+        .box {
+            width: 40%;
+            border: 1px solid #CCC;
+            box-shadow: 0 1px 5px #CCC;
+            border-radius: 5px;
+            font-family: verdana;
+            margin: 25px auto;
+            overflow: hidden;
+        }
+
+            .box header {
+                background: #f1f1f1;
+                box-shadow: 0 1px 2px #888;
+                padding: 10px;
+            }
+
+            .box h1 {
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            .box section {
+                padding: 10px 30px;
+                font-size: 14px;
+                line-height: 175%;
+                color: #333;
+            }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    </style>
+    <link href="css/floating-labels.css" rel="stylesheet">
+    <link href="~/css/addImage.css" rel="stylesheet">
+    <link href="~/css/floatingLabels.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-color: #ffb3b3" class="box">
+    <form class="form-signin" method="post" asp-controller="Login" asp-action="Login">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="https://image.freepik.com/free-vector/cakes-seamless-pattern_98292-1047.jpg" alt="" width="200" height="200">
+            <h1 class="h3 mb-3 font-weight-normal">PASTRY ~ Login</h1>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
+            <label for="inputEmail">Username</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
+            <label for="inputPassword">Password</label>
+        </div>
+
+        <input class="btn btn-primary btn-lg btn-block" value="Sign in" asp-action="VerifyData" type="submit">
+        <div class="text-center mb-4">
+            <br>
+        </div>
+
+    </form>
+</body>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PASTRY.DomainEntities.Drink>
+
+@{
+    ViewData["Title"] = "ViewDrinks";
+}
+<html>
+<head>
+    <style>
+        body {
+            background-color: #ffb3b3;
+        }
+        .box {
+            width: 40%;
+            border: 1px solid #CCC;
+            box-shadow: 0 1px 5px #CCC;
+            border-radius: 5px;
+            font-family: verdana;
+            margin: 25px auto;
+            overflow: hidden;
+        }
+        .box header {
+            background: #f1f1f1;
+            box-shadow: 0 1px 2px #888;
+            padding: 10px;
+        }
+        .box h1 {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .box section {
+            padding: 10px 30px;
+            font-size: 14px;
+            line-height: 175%;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drinks</h1>
+
+    <div class="container">
+        @foreach (var item in Model)
+        {
+
+        <div class="box">
+            <header>
+                <h1>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h1>
+            </header>
+
+            <p>
+
+                <!---Show the image-->
+                <!--Make Image clickable-->
+                <a href="../@("images/"+item.ImageDrink)">
+                    <img src="@("~/images/"+item.ImageDrink)" asp-append-version="true" width="100%" height="100%" />
+                </a>
+
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayFor(modelItem => item.Price)
+            </p>
+
+
+
+        </div>
+
+        }
+    </div>
+</body>
+</html>
